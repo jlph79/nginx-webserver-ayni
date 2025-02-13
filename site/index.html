@@ -1,236 +1,78 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doneer - Help Meisjes ICT-Experts Worden | Stichting Ayni</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #a85238;
-            --secondary: #f9f5f0;
-            --accent: #FFB347;
-            --text: #333333;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            background: var(--secondary);
-            color: var(--text);
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 0 20px;
-        }
-
-        header {
-            background: white;
-            padding: 20px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: auto;
-            padding: 0 20px;
-        }
-
-        .logo img {
-            height: 50px;
-        }
-
-        .hero {
-            padding-top: 120px;
-            text-align: center;
-            background: linear-gradient(45deg, rgba(168,82,56,0.05) 0%, rgba(255,179,71,0.05) 100%);
-            padding-bottom: 60px;
-        }
-
-        h1 {
-            font-size: 3.5rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-            line-height: 1.2;
-            font-weight: 600;
-        }
-
-        .subtitle {
-            font-size: 1.5rem;
-            color: var(--text);
-            margin-bottom: 40px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .impact-stats {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin: 40px 0;
-            flex-wrap: wrap;
-        }
-
-        .stat-box {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            text-align: center;
-            flex: 1;
-            min-width: 200px;
-            max-width: 300px;
-            transition: transform 0.3s ease;
-        }
-
-        .stat-box:hover {
-            transform: translateY(-5px);
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            color: var(--primary);
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            padding: 60px 0;
-        }
-
-        .gallery-image {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            border-radius: 15px;
-            transition: transform 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        .gallery-image:hover {
-            transform: scale(1.02);
-        }
-
-        .donation-section {
-            background: white;
-            padding: 60px 0;
-            border-radius: 20px;
-            margin: 40px auto;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            max-width: 800px;
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-            .subtitle {
-                font-size: 1.2rem;
-            }
-            .stat-box {
-                min-width: 100%;
-            }
-            .gallery {
-                grid-template-columns: 1fr;
-            }
-            .desktop-donation {
-                display: none;
-            }
-        }
-
-        @media (min-width: 769px) {
-            .mobile-donation {
-                display: none;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <div class="header-content">
-            <a href="https://www.ayni.nl" class="logo">
-                <img src="https://placehold.co/150x50" alt="Stichting Ayni Logo">
-            </a>
-        </div>
-    </header>
-
-    <section class="hero">
-        <div class="container">
-            <h1>Help Meisjes ICT-Experts Worden</h1>
-            <p class="subtitle">Samen maken we technologie toegankelijk voor meisjes in Bolivia en creëren we kansen voor een betere toekomst.</p>
-
-            <div class="impact-stats">
-                <div class="stat-box">
-                    <div class="stat-number">500+</div>
-                    <div>Meisjes Opgeleid</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number">85%</div>
-                    <div>Vindt ICT Werk</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number">10</div>
-                    <div>Jaar Ervaring</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="container">
-        <div class="gallery">
-            <img src="https://placehold.co/600x400" alt="Ayni Project Photo 1" class="gallery-image">
-            <img src="https://placehold.co/600x400" alt="Ayni Project Photo 2" class="gallery-image">
-            <img src="https://placehold.co/600x400" alt="Ayni Project Photo 3" class="gallery-image">
-        </div>
-
-        <div class="donation-section">
-            <h2 style="text-align: center; color: var(--primary); margin-bottom: 30px;">Steun Onze Missie</h2>
-
-            <!-- Desktop versie -->
-            <div class="desktop-donation">
-                <iframe
-                    src="https://www.geef.nl/nl/doneer?action=29774&backLink=https%3A%2F%2Fwww.geef.nl%2Fnl%2Factie%2Fsteun-de-school-van-de-urus-gemeenschap-in-bolivia%2Fdonateurs"
-                    width="100%"
-                    height="800px"
-                    frameborder="0"
-                    style="border-radius: 10px; max-width: 600px; margin: 0 auto; display: block;">
-                </iframe>
-            </div>
-
-            <!-- Mobiele versie -->
-            <div class="mobile-donation" style="text-align: center; padding: 20px;">
-                <a href="https://www.geef.nl/nl/doneer?action=29774&backLink=https%3A%2F%2Fwww.geef.nl%2Fnl%2Factie%2Fsteun-de-school-van-de-urus-gemeenschap-in-bolivia%2Fdonateurs"
-                   target="_blank"
-                   style="
-                       background-color: var(--primary);
-                       color: white;
-                       padding: 15px 30px;
-                       text-decoration: none;
-                       border-radius: 30px;
-                       font-size: 18px;
-                       font-weight: bold;
-                       display: inline-block;
-                       transition: all 0.3s ease;
-                       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-                   ">
-                    Doneer Nu voor ICT-Onderwijs
+        <nav>
+            <div class="header-content">
+                <a href="https://www.ayni.nl" class="logo">
+                    <img src="https://static.showit.co/file/C9bWccUFTEW3h4oZ_3FDzw/148986/logo_-_compleet3_1.png" alt="Stichting Ayni Logo">
                 </a>
             </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Help Meisjes ICT-Experts Worden</h1>
+                <p>Steun onze missie om kansarme meisjes in Peru op te leiden tot ICT-professionals</p>
+                <button class="cta-button">Doneer Nu</button>
+            </div>
+        </section>
+
+        <section class="about">
+            <div class="about-content">
+                <h2>Over Ons Project</h2>
+                <p>Wij geloven in de kracht van technologie om levens te veranderen. Door meisjes op te leiden in ICT, creëren we nieuwe kansen en doorbreken we de cyclus van armoede.</p>
+            </div>
+        </section>
+
+        <section class="impact">
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <h3>Opleiding</h3>
+                    <p>Professionele ICT-training en begeleiding</p>
+                </div>
+                <div class="impact-card">
+                    <h3>Mentorschap</h3>
+                    <p>Persoonlijke begeleiding door ervaren professionals</p>
+                </div>
+                <div class="impact-card">
+                    <h3>Toekomst</h3>
+                    <p>Baangarantie en carrièremogelijkheden</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: info@ayni.nl</p>
+                <p>Tel: +31 (0)6 12345678</p>
+            </div>
+            <div class="footer-section">
+                <h4>Volg Ons</h4>
+                <div class="social-links">
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
         </div>
-    </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Stichting Ayni. Alle rechten voorbehouden.</p>
+        </div>
+    </footer>
 </body>
 </html>
+>>>>>>> b8354ec (nu doneren - ayni site)
