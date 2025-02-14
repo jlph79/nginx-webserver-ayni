@@ -114,3 +114,56 @@ if (donateButton) {
         alert('Thank you for your interest in donating! Donation system coming soon.');
     });
 }
+
+// Donation form interactions
+document.addEventListener('DOMContentLoaded', () => {
+    // Donation amount buttons
+    const amountButtons = document.querySelectorAll('.amount-btn');
+    const donateButton = document.querySelector('.donate-btn');
+    let selectedAmount = null;
+
+    // Handle amount button clicks
+    amountButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all buttons
+            amountButtons.forEach(btn => btn.classList.remove('active'));
+            
+            // Add active class to clicked button
+            button.classList.add('active');
+            
+            // Store selected amount
+            selectedAmount = button.dataset.amount;
+            
+            if (selectedAmount === 'custom') {
+                const customAmount = prompt('Voer het gewenste bedrag in (€):', '');
+                if (customAmount && !isNaN(customAmount) && customAmount > 0) {
+                    selectedAmount = customAmount;
+                } else {
+                    button.classList.remove('active');
+                    selectedAmount = null;
+                }
+            }
+        });
+    });
+
+    // Handle donate button click
+    donateButton.addEventListener('click', () => {
+        if (!selectedAmount) {
+            alert('Selecteer eerst een donatiebedrag');
+            return;
+        }
+
+        // Redirect to Geef.nl with the selected amount
+        const geefUrl = 'https://www.geef.nl/nl/doneer?action=29774';
+        window.location.href = `${geefUrl}&amount=${selectedAmount}`;
+    });
+
+    // Partner button click handler
+    const partnerButton = document.querySelector('.cta-button.secondary');
+    if (partnerButton) {
+        partnerButton.addEventListener('click', () => {
+            // Redirect to the partner program page or show a modal
+            window.location.href = 'https://www.ayni.nl/word-partner';
+        });
+    }
+});
