@@ -1,7 +1,7 @@
 :root {
     --color-primary: #104d44;
     --color-secondary: #d1ab3d;
-    --color-accent: #d54b35;
+    --color-accent: #d54b35; /* Using #d54b35 for accent, matching your screenshot color */
     --color-terracota: #ebbfa2;
     --color-background: #f2eee7;
 }
@@ -41,12 +41,15 @@ header {
     padding: 0 2rem;
     height: 100%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    /* Force items to start on the left (logo) */
+    justify-content: flex-start;
 }
 
 .logo {
     display: block;
+    /* If you want to add some spacing on the right of the logo */
+    margin-right: 2rem;
 }
 
 .logo img {
@@ -54,21 +57,25 @@ header {
     width: auto;
 }
 
+/* Push the nav links to the right by using margin-left: auto */
 .nav-links {
+    margin-left: auto;
     display: flex;
     gap: 2rem;
     align-items: center;
 }
 
 .nav-links a {
-    color: var(--color-primary);
+    /* Use the accent color (#d54b35) for the links */
+    color: var(--color-accent);
     text-decoration: none;
     font-size: 1rem;
     transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: var(--color-accent);
+    /* Slightly darker or lighter accent on hover */
+    color: #c03d29;
 }
 
 .nav-links .donate-link {
@@ -404,7 +411,7 @@ footer {
     }
 
     .nav-links {
-        display: none;
+        display: none; /* Hide nav links on mobile if you want a burger menu later */
     }
 
     .hero-text-overlay h1 {
